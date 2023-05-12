@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Itanoji/time-cutter-frontend.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Itanoji/time-cutter-backend.git
