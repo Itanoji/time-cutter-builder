@@ -12,17 +12,17 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DATABASE_URL=mysql://user:password@mysql/dbname
+      - DATABASE_URL=mysql://root:obama2001@mysql/time-cutter
     depends_on:
       - mysql
 
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: dbname
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: time-cutter
+      MYSQL_USER: root
+      MYSQL_PASSWORD: obama2001
+      MYSQL_ROOT_PASSWORD: obama2001
     volumes:
       - mysql-data:/var/lib/mysql
 
