@@ -3,7 +3,7 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "80:80"
     environment:
       - REACT_APP_API_BASE_URL=http://localhost:8080
 
@@ -12,19 +12,19 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DATABASE_URL=mysql://root:obama2001@mysql/time-cutter
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/time_cutter?autoReconnect=true
     depends_on:
       - mysql
 
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: time-cutter
-      MYSQL_USER: root
-      MYSQL_PASSWORD: obama2001
+      MYSQL_DATABASE: time_cutter
       MYSQL_ROOT_PASSWORD: obama2001
     volumes:
       - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
 
 volumes:
   mysql-data:
